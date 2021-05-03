@@ -23,6 +23,23 @@ var IndexX;
 var IndexY;
 
 var ctx2 = document.getElementById("canvas2").getContext("2d");
+var question_icon = new Image();
+
+//$(window).on('resize', function() {
+    if ($(window).width() < 1200) {
+        question_icon.src = './img/qmMIN.svg';
+    } else {
+        question_icon.src = './img/qm.svg';
+    }
+//});
+
+Chart.pluginService.register({
+    afterUpdate: function(chart) {
+        for (var ii = 0; ii < 12; ii++) {
+            chart.config.data.datasets[0]._meta[0].data[ii]._model.pointStyle = question_icon;
+        }
+    }
+});
 var myLine2 = new Chart(ctx2, {
 
     type: 'line',
@@ -60,8 +77,11 @@ var myLine2 = new Chart(ctx2, {
         }]
     },
     options: {
+        tooltipEvents: ["click"],
+        events: ["click"],
         responsive: true,
         tooltips: {
+            mode: 'label',
             titleFontSize: 18,
             bodyFontSize: 16,
             footerFontSize:14,
@@ -74,7 +94,7 @@ var myLine2 = new Chart(ctx2, {
                 title: (items, data) =>{
                     IndexX = data.datasets[items[0].datasetIndex].data[items[0].index].x;
                     IndexY = data.datasets[items[0].datasetIndex].data[items[0].index].y;
-                    return [yMap[IndexY]+ ' ' + xMap[IndexX],"","Примеры:"]},
+                    return [yMap[IndexY]+ ' ' + xMap[IndexX],""/*,"Примеры:"*/]},
                 //(item, data) => yMap[data.datasets[item.datasetIndex].data[item.index].y]
                 label: (items, data) => {
                     var answer = "Пусто";
@@ -83,13 +103,13 @@ var myLine2 = new Chart(ctx2, {
                         case 1:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will work", "He won't work", "Will he work?","",MiniTitle];
+                                    answer = ["I will work", "He won't work", "Will he work?",""/*,MiniTitle*/];
                                     break;
                                 case 2:
-                                    answer = ["I worked", "He didn't work", "Did you work?","",MiniTitle];
+                                    answer = ["I worked", "He didn't work", "Did you work?",""/*,MiniTitle*/];
                                     break;
                                 case 3:
-                                    answer = ["I work","He works", "I don't work", "He doesn't work","Do you work?","Does he work?","",MiniTitle];
+                                    answer = ["I work","He works", "I don't work", "He doesn't work","Do you work?","Does he work?",""/*,MiniTitle*/];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -98,13 +118,13 @@ var myLine2 = new Chart(ctx2, {
                         case 2:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will be working", "He won't be working","Will they be working?","",MiniTitle];
+                                    answer = ["I will be working", "He won't be working","Will they be working?",""/*,MiniTitle*/];
                                     break;
                                 case 2:
-                                    answer = ["I was working ", "He were working","He wasn't working ", "We aren't working","Is he working?","Are we working?","",MiniTitle];
+                                    answer = ["I was working ", "He were working","He wasn't working ", "We aren't working","Is he working?","Are we working?",""/*,MiniTitle*/];
                                     break;
                                 case 3:
-                                    answer = ["I am working", "He is working ","We are working", "I'm not working","He isn't working","We aren't working","Am i working?","Is he working?","Are we working?","",MiniTitle];
+                                    answer = ["I am working", "He is working ","We are working", "I'm not working","He isn't working","We aren't working","Am I working?","Is he working?","Are we working?",""/*,MiniTitle*/];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -113,13 +133,13 @@ var myLine2 = new Chart(ctx2, {
                         case 3:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will have worked","He won't have worked","Have they worked?","",MiniTitle];
+                                    answer = ["I will have worked","He won't have worked","Have they worked?",""/*,MiniTitle*/];
                                     break;
                                 case 2:
-                                    answer = ["I had worked","He hadn't worked", "Had they worked?","",MiniTitle];
+                                    answer = ["I had worked","He hadn't worked", "Had they worked?",""/*,MiniTitle*/];
                                     break;
                                 case 3:
-                                    answer = ["I have worked", "He was worked","I haven't worked","He hasn't worked","Have you worked?","Has he worked?","",MiniTitle];
+                                    answer = ["I have worked", "He was worked","I haven't worked","He hasn't worked","Have you worked?","Has he worked?",""/*,MiniTitle*/];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -128,13 +148,13 @@ var myLine2 = new Chart(ctx2, {
                         case 4:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will have been working","He won't have been working","Will they have been working?","",MiniTitle];
+                                    answer = ["I will have been working","He won't have been working","Will they have been working?",""/*,MiniTitle*/];
                                     break;
                                 case 2:
-                                    answer = ["I had been working","He hadn't been working","Had they been working?","",MiniTitle];
+                                    answer = ["I had been working","He hadn't been working","Had they been working?",""/*,MiniTitle*/];
                                     break;
                                 case 3:
-                                    answer = ["I have been working","He has been working","I haven't been working","He hasn't been working","Have you been working?","Has he been working?","",MiniTitle];
+                                    answer = ["I have been working","He has been working","I haven't been working","He hasn't been working","Have you been working?","Has he been working?",""/*,MiniTitle*/];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -217,7 +237,7 @@ var myLine2 = new Chart(ctx2, {
         },
         title: {
             fontFamily: "'Impact', fantasy",
-            fontSize: 25,
+            fontSize: 30,
             fontStyle: "normal",
             display: true,
             text: 'Chart of times in english'
@@ -227,18 +247,19 @@ var myLine2 = new Chart(ctx2, {
         },
         scales: {
             xAxes: [{
+                
                 type: 'linear',
                 position: 'bottom',
                 scaleLabel: {
                     fontFamily: "' Arial', sans-serif",
-                    fontSize: 20,
+                    fontSize: 24,
                     fontStyle: "bold",
                     display: true,
                     labelString: 'КАК?'
                 },
                 ticks: {
                     fontFamily: "'Impact', fantasy",
-                    fontSize: 18,
+                    fontSize: 20,
                     fontStyle: "normal",
                     min: 0,
                     max: xMap.length - 1,
@@ -250,15 +271,15 @@ var myLine2 = new Chart(ctx2, {
             yAxes: [{
                 scaleLabel: {
                     fontFamily: "' Arial', sans-serif",
-                    fontSize: 20,
+                    fontSize: 24,
                     fontStyle: "bold",
                     display: true,
                     labelString: 'КОГДА?'
                 },
                 ticks: {
-                    minRotation : 90,
+                    //minRotation : 90,
                     fontFamily: "'Impact', fantasy",
-                    fontSize: 18,
+                    fontSize: 20,
                     fontStyle: "normal",
                     reverse: true,
                     min: 0,
@@ -268,8 +289,7 @@ var myLine2 = new Chart(ctx2, {
                     },
                 },
             }]
-        },
-
+        }
     }
 });
 
