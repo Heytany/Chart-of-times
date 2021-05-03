@@ -22,7 +22,7 @@ var mapDataPoint = function (xValue, yValue) {
 var IndexX;
 var IndexY;
 
-var ctx2 = document.getElementById("canvas2").getContext("2d");
+var ChartTimes = document.getElementById("canvas").getContext("2d");
 var question_icon = new Image();
 
 //$(window).on('resize', function() {
@@ -40,7 +40,8 @@ Chart.pluginService.register({
         }
     }
 });
-var myLine2 = new Chart(ctx2, {
+
+var config =  {
 
     type: 'line',
     data: {
@@ -247,7 +248,7 @@ var myLine2 = new Chart(ctx2, {
         },
         scales: {
             xAxes: [{
-                
+
                 type: 'linear',
                 position: 'bottom',
                 scaleLabel: {
@@ -291,8 +292,25 @@ var myLine2 = new Chart(ctx2, {
             }]
         }
     }
-});
+}
+var myChart = new Chart(ChartTimes, config);
 
 
 
 
+Chart.defaults.global.responsive = true;
+Chart.defaults.global.hover.mode = 'single';
+document.getElementById("canvas").onclick = function (evt) {
+    var activePoint = myChart.lastActive[0];
+    if (activePoint !== undefined) {
+        var index = activePoint._index;
+        //alert("index "+ index);
+        var TimeDiv = document.getElementById("t"+index);
+        if ( $(TimeDiv).css('display') == 'none'){
+            TimeDiv.style.display = 'block';
+        } else{
+            TimeDiv.style.display = 'none';
+        }
+
+    }
+};

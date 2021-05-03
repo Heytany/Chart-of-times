@@ -1,5 +1,43 @@
 
+
+
+
 body {
     background-image: url('./img/pattern.jpg');
     height: 100vh;
+}
+.array-of-times{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.time-svg{
+    margin: 0 25px 0 0;
+}
+
+.time-examples-container .time-examples{
+    margin-right: 25px;
+}
+
+.time-examples-container .time-examples:last-child{
+    margin-right: 0;
+}
+
+.time-holder{
+    margin: 15px;
+    border-style: dashed;
+    border-color: #666666;
+    border-width: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.time-examples-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

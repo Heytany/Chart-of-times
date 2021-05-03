@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Chart by Artemiev A.V</title>
     <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css"/>
     <link rel="shortcut icon" href="./img/icon/qm1.ico" type="image/x-icon">
 </head>
 
@@ -12,10 +12,280 @@
 <!-- partial:index.partial.html -->
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="width: 90%;">
-        <canvas id="canvas2"></canvas>
+        <canvas id="canvas"></canvas>
     </div>
 </div>
+<div style="display: flex; justify-content: center; align-items: center;">
+<div class="array-of-times" style="width: 90%;">
+    <div id="t0" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 1</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t1" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 2</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t2" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 3</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
+    <div id="t3" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 4</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t4" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 5</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t5" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 6</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="t6" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 7</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t7" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 8</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t8" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 9</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="t9" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 10</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t10" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 11</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="t11" style="display: none;" class="time-holder">
+        <h4 class="time-title">Время 12</h4>
+        <div class="time-examples-container">
+            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+            <div class="time-examples">
+                <ol>
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                    <li>Четвертый пункт</li>
+                    <li>Пятый пункт</li>
+                </ol>
+            </div>
+            <div class="time-examples">
+                <ol>
+                    <li>образуется с 1</li>
+                    <li>образуется с 2</li>
+                    <li>образуется с 3</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <!-- Jquery -->
 <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
 <!-- partial -->
