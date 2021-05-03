@@ -6,8 +6,7 @@ body {
 
 @media all and (orientation: portrait) {
     html,body {
-        transform: rotate(-90deg);
-        transform-origin: left top;
+        transform: rotate(45deg);
         width: 100vh;
     }
 }
