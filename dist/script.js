@@ -1,4 +1,4 @@
-
+//screen.orientation.lock('landscape');
 var Styles =['circle', 'cross','crossRot','rect','rectRounded','rectRot','star','triangle'];
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
