@@ -1,9 +1,12 @@
 
 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,600&display=swap');
+*{
+    font-family: 'Rubik', sans-serif;
+}
 body {
-    background-image: url('./img/pattern.jpg');
+    background: #FFFF99;
+    /*background-image: url('./img/pattern.jpg');*/
     height: 100vh;
 }
 .array-of-times{

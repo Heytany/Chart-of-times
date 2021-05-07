@@ -67,9 +67,9 @@ var config =  {
                 mapDataPoint("Perfect Continuous", 'Present'),
 
             ],
-            pointRadius: 20,
-            pointHoverRadius: 25,
-            borderRadius: 15,
+            pointRadius: 66,
+            pointHoverRadius: 66,
+            radius: 66,
             pointStyle: Styles[Math.floor(Math.random() * 8)],
             fill: false,
             showLine: false,
@@ -237,7 +237,7 @@ var config =  {
             }
         },
         title: {
-            fontFamily: "'Impact', fantasy",
+            fontFamily: "'Rubik', sans-serif",
             fontSize: 30,
             fontStyle: "normal",
             display: true,
@@ -252,14 +252,14 @@ var config =  {
                 type: 'linear',
                 position: 'bottom',
                 scaleLabel: {
-                    fontFamily: "' Arial', sans-serif",
+                    fontFamily: "'Rubik', sans-serif",
                     fontSize: 24,
                     fontStyle: "bold",
                     display: true,
                     labelString: 'КАК?'
                 },
                 ticks: {
-                    fontFamily: "'Impact', fantasy",
+                    fontFamily: "'Rubik', sans-serif",
                     fontSize: 20,
                     fontStyle: "normal",
                     min: 0,
@@ -271,7 +271,7 @@ var config =  {
             }],
             yAxes: [{
                 scaleLabel: {
-                    fontFamily: "' Arial', sans-serif",
+                    fontFamily: "'Rubik', sans-serif",
                     fontSize: 24,
                     fontStyle: "bold",
                     display: true,
@@ -279,7 +279,7 @@ var config =  {
                 },
                 ticks: {
                     //minRotation : 90,
-                    fontFamily: "'Impact', fantasy",
+                    fontFamily: "'Rubik', sans-serif",
                     fontSize: 20,
                     fontStyle: "normal",
                     reverse: true,
