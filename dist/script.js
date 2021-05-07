@@ -237,9 +237,9 @@ var config =  {
             }
         },
         title: {
-            fontFamily: "'Rubik', sans-serif",
+            fontFamily: "Rubik",
             fontSize: 30,
-            fontStyle: "normal",
+            //fontStyle: "normal",
             display: true,
             text: 'Chart of times in english'
         },
@@ -252,16 +252,16 @@ var config =  {
                 type: 'linear',
                 position: 'bottom',
                 scaleLabel: {
-                    fontFamily: "'Rubik', sans-serif",
+                    fontFamily: "Rubik",
                     fontSize: 24,
-                    fontStyle: "bold",
+                    fontStyle: "italic",
                     display: true,
                     labelString: 'КАК?'
                 },
                 ticks: {
-                    fontFamily: "'Rubik', sans-serif",
+                    fontFamily: "Rubik",
                     fontSize: 20,
-                    fontStyle: "normal",
+                    //fontStyle: "normal",
                     min: 0,
                     max: xMap.length - 1,
                     callback: function (value) {
@@ -271,17 +271,18 @@ var config =  {
             }],
             yAxes: [{
                 scaleLabel: {
-                    fontFamily: "'Rubik', sans-serif",
+                    fontFamily: "Rubik",
                     fontSize: 24,
-                    fontStyle: "bold",
+                    //fontStyle: "bold",
                     display: true,
                     labelString: 'КОГДА?'
                 },
                 ticks: {
                     //minRotation : 90,
-                    fontFamily: "'Rubik', sans-serif",
+                    fontFamily: "Rubik",
+                    //fontFamily: "'Rubik', sans-serif",
                     fontSize: 20,
-                    fontStyle: "normal",
+                    fontStyle: "italic",
                     reverse: true,
                     min: 0,
                     max: yMap.length - 1,
