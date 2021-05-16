@@ -1,296 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Chart by Artemiev A.V</title>
     <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./styles.css" />
     <link rel="shortcut icon" href="./img/icon/qm1.ico" type="image/x-icon">
 </head>
 
 <body>
-<!-- partial:index.partial.html -->
-<div style="display: flex; justify-content: center; align-items: center;">
-    <div style="width: 90%;">
-        <canvas id="canvas"></canvas>
-    </div>
-</div>
-<div style="display: flex; justify-content: center; align-items: center;">
-<div class="array-of-times" style="width: 90%;">
-    <div id="t0" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 1</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
+    <!-- partial:index.partial.html -->
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="width: 90%;">
+            <canvas id="canvas"></canvas>
         </div>
     </div>
-    <div id="t1" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 2</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t2" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 3</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="array-of-times" style="width: 90%;">
+            <div class="arrow-top">
 
-    <div id="t3" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 4</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
             </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t4" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 5</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t5" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 6</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+            <div class="arrow-right">
 
-    <div id="t6" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 7</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
             </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t7" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 8</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t8" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 9</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+            <span class="axis-labels" id="Fu">Future </span>
+            <span class="axis-labels" id="Pa">Past </span>
+            <span class="axis-labels" id="Pr">Present </span>
+            <span class="axis-labels" id="Si">Simple </span>
+            <span class="axis-labels" id="Co">Continuous </span>
+            <span class="axis-labels" id="Pe">Perfect </span>
+            <span class="axis-labels" id="PC">Perfect Continuous</span>
 
-    <div id="t9" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 10</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
+
+            <div id="t0" style="" class="time-holder">
+                <h4 class="time-title">Future Simple</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I will work</li>
+                            <li>He won't work</li>
+                            <li>Will he work?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> will</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
+            <div id="t3" style="" class="time-holder">
+                <h4 class="time-title">Future Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I will be working</li>
+                            <li>He won't be working</li>
+                            <li>Will they be working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> will be + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t6" style="" class="time-holder">
+                <h4 class="time-title">Future Perfect</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I will have worked</li>
+                            <li>He won't have worked</li>
+                            <li>Have they worked?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> will have + (work)ed</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t9" style="" class="time-holder">
+                <h4 class="time-title">Future Perfect Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I will have been working</li>
+                            <li>He won't have been working</li>
+                            <li>Will they have been working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li>will have been + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="t1" style="" class="time-holder">
+                <h4 class="time-title">Past Simple</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I worked</li>
+                            <li>He didn't work</li>
+                            <li>Did you work?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> did</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t4" style="" class="time-holder">
+                <h4 class="time-title">Past Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I was working</li>
+                            <li>He were working</li>
+                            <li>He wasn't working</li>
+                            <li>We aren't working</li>
+                            <li>Is he working?</li>
+                            <li>Are we working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> was + ing</li>
+                                <li> were + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t7" style="" class="time-holder">
+                <h4 class="time-title">Past Perfect</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I had worked</li>
+                            <li>He hadn't worked</li>
+                            <li>Had they worked?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> had + (work)ed</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t10" style="" class="time-holder">
+                <h4 class="time-title">Past Perfect Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I had been working</li>
+                            <li>He hadn't been working</li>
+                            <li>Had they been working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> had been + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="t2" style="" class="time-holder">
+                <h4 class="time-title">Present Simple</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I work</li>
+                            <li>He works</li>
+                            <li>I don't work</li>
+                            <li>He doesn't work</li>
+                            <li>Do you work?</li>
+                            <li>Does he work?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> do</li>
+                                <li> does</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t5" style="" class="time-holder">
+                <h4 class="time-title">Present Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I am working</li>
+                            <li>He is working</li>
+                            <li>We are working</li>
+                            <li>I'm not working</li>
+                            <li>He isn't working</li>
+                            <li>We aren't working</li>
+                            <li>Am I working?</li>
+                            <li>Is he working?</li>
+                            <li>Are we working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> am + ing</li>
+                                <li> is + ing</li>
+                                <li> are + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t8" style="" class="time-holder">
+                <h4 class="time-title">Present Perfect</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I have worked</li>
+                            <li>He was worked</li>
+                            <li>I haven't worked</li>
+                            <li>He hasn't worked</li>
+                            <li>Have you worked?</li>
+                            <li>Has he worked?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li> have + (work)ed</li>
+                                <li> has + (work)ed</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="t11" style="" class="time-holder">
+                <h4 class="time-title">Present Perfect Continuous</h4>
+                <div class="time-examples-container">
+                    <div class="time-svg"><img src="./img/em.svg" alt=""></div>
+                    <div class="time-examples">
+                        <ol>
+                            <li>I have been working</li>
+                            <li>He has been working</li>
+                            <li>I haven't been working</li>
+                            <li>He hasn't been working</li>
+                            <li>Have you been working?</li>
+                            <li>Has he been working?</li>
+                        </ol>
+                        <div class="time-examples">
+                            <ol>
+                                <li>have been + ing</li>
+                                <li>has been + ing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-    <div id="t10" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 11</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div id="t11" style="display: none;" class="time-holder">
-        <h4 class="time-title">Время 12</h4>
-        <div class="time-examples-container">
-            <div class="time-svg"><img src="./img/em.svg" alt=""></div>
-            <div class="time-examples">
-                <ol>
-                    <li>Первый пункт</li>
-                    <li>Второй пункт</li>
-                    <li>Третий пункт</li>
-                    <li>Четвертый пункт</li>
-                    <li>Пятый пункт</li>
-                </ol>
-            </div>
-            <div class="time-examples">
-                <ol>
-                    <li>образуется с 1</li>
-                    <li>образуется с 2</li>
-                    <li>образуется с 3</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- Jquery -->
-<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-<!-- partial -->
-<script type="text/javascript" src="lib/chartjs/Chart.min.js"></script>
-<script src="./script.js"></script>
+    <!-- Jquery -->
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <!-- partial -->
+    <script type="text/javascript" src="lib/chartjs/Chart.min.js"></script>
+    <script src="./script.js"></script>
 
 </body>
+
 </html>

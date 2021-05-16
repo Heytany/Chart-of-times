@@ -220,7 +220,7 @@ var config =  {
                                     answer = ["will have been + ing"];
                                     break;
                                 case 2:
-                                    answer = ["had been + + ing"];
+                                    answer = ["had been + ing"];
                                     break;
                                 case 3:
                                     answer = ["have been + ing","has been + ing"];
@@ -241,7 +241,7 @@ var config =  {
             fontSize: 30,
             //fontStyle: "normal",
             display: true,
-            text: 'Chart of times in english'
+            text: ''
         },
         legend: {
             display: false
@@ -307,10 +307,10 @@ document.getElementById("canvas").onclick = function (evt) {
         var index = activePoint._index;
         //alert("index "+ index);
         var TimeDiv = document.getElementById("t"+index);
-        if ( $(TimeDiv).css('display') == 'none'){
-            TimeDiv.style.display = 'block';
+        if ( $(TimeDiv).css('visibility') == 'hidden'){
+            TimeDiv.style.visibility = 'visible' ;
         } else{
-            TimeDiv.style.display = 'none';
+            TimeDiv.style.visibility = 'hidden';
         }
 
     }
