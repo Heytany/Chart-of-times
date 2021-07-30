@@ -1,70 +1,70 @@
 //screen.orientation.lock('landscape');
-var Styles =['circle', 'cross','crossRot','rect','rectRounded','rectRot','star','triangle'];
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 14)];
-    }
-    return color;
-}
+let Styles = ['circle', 'cross', 'crossRot', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'];
+let time0 = ["Simple","(факты)"];
+let time1 = ["Continuous","(конкретный","момент)"];
+let time2 = ["Perfect","(результат)"];
+let time3 = ["Perfect Continuous","(длительность","c прошлого","по настоящее)"];
+let time4 = "Future";
+let time5 = "Past";
+let time6 = "Present";
 
-var xMap = [" ", "Simple", "Continuous", "Perfect", "Perfect Continuous", " "];
-var yMap = [' ', 'Future', 'Past', 'Present', ' '];
+let time11 = ["Simple","(факты)"];
+let xMap = [" ", time0, time1, time2, time3, " "];
+let yMap = [' ', time4, time5, time6, ' '];
 
-var mapDataPoint = function (xValue, yValue) {
+let mapDataPoint = function (xValue, yValue) {
     return {
         x: xMap.indexOf(xValue),
         y: yMap.indexOf(yValue)
     };
 };
 
-var IndexX;
-var IndexY;
+let IndexX;
+let IndexY;
 
-var ChartTimes = document.getElementById("canvas").getContext("2d");
-var question_icon = new Image();
+let ChartTimes = document.getElementById("canvas").getContext("2d");
+let question_icon = new Image();
 
 //$(window).on('resize', function() {
-    if ($(window).width() < 1200) {
-        question_icon.src = './img/qmMIN.svg';
-    } else {
-        question_icon.src = './img/qm.svg';
-    }
+if ($(window).width() < 1200) {
+    question_icon.src = './img/qmMIN.svg';
+} else {
+    question_icon.src = './img/qm.svg';
+}
 //});
 
 Chart.pluginService.register({
-    afterUpdate: function(chart) {
-        for (var ii = 0; ii < 12; ii++) {
+    afterUpdate: function (chart) {
+        for (let ii = 0; ii < 12; ii++) {
             chart.config.data.datasets[0]._meta[0].data[ii]._model.pointStyle = question_icon;
         }
     }
 });
 
-var config =  {
+let config = {
 
     type: 'line',
     data: {
-        xLabels: [" ", "Simple", "Continuous", "Perfect", "Perfect Continuous", " "],
-        yLabels: [' ', 'Present', 'Past', 'Future', ' '],
+        xLabels: [" ", time0, time1, time2, time3, " "],
+        yLabels: [' ', time4, time5, time6, ' '],
         datasets: [{
             //label: "My First dataset",
             data: [
-                mapDataPoint("Simple", "Future"),
-                mapDataPoint("Simple", "Past"),
-                mapDataPoint("Simple", "Present"),
+                mapDataPoint(time0, time4),
+                mapDataPoint(time0, time5),
+                mapDataPoint(time0, time6),
 
-                mapDataPoint("Continuous", "Future"),
-                mapDataPoint("Continuous", 'Past'),
-                mapDataPoint("Continuous", 'Present'),
+                mapDataPoint(time1, time4),
+                mapDataPoint(time1, time5),
+                mapDataPoint(time1, time6),
 
-                mapDataPoint("Perfect", "Future"),
-                mapDataPoint("Perfect", 'Past'),
-                mapDataPoint("Perfect", 'Present'),
+                mapDataPoint(time2, time4),
+                mapDataPoint(time2, time5),
+                mapDataPoint(time2, time6),
 
-                mapDataPoint("Perfect Continuous", "Future"),
-                mapDataPoint("Perfect Continuous", 'Past'),
-                mapDataPoint("Perfect Continuous", 'Present'),
+                mapDataPoint(time3, time4),
+                mapDataPoint(time3, time5),
+                mapDataPoint(time3, time6),
 
             ],
             pointRadius: 66,
@@ -73,8 +73,6 @@ var config =  {
             pointStyle: Styles[Math.floor(Math.random() * 8)],
             fill: false,
             showLine: false,
-            borderColor: getRandomColor(),
-            backgroundColor: getRandomColor()
         }]
     },
     options: {
@@ -82,35 +80,42 @@ var config =  {
         events: ["click"],
         responsive: true,
         tooltips: {
+            backgroundColor: '#FFFFcc',
             mode: 'label',
-            titleFontSize: 18,
-            bodyFontSize: 16,
-            footerFontSize:14,
+            titleFontSize: 30,
+            titleFontColor: '#66ff66',
+            titleMarginBottom: 0,
+            titleFontStyle: 'bold',
+            bodyFontSize: 30,
+            bodyFontColor: '#ff66ff',
+            bodyFontStyle: 'bold',
+            footerFontSize: 30,
+            footerFontColor: '#3399ff',
+            footerMarginTop: 0,
+            footerFontStyle: 'bold',
+            borderColor: 'rgba(0,0,0,0.9)',
+
             custom: function (tooltip) {
                 if (!tooltip) return;
                 // disable displaying the color box;
                 tooltip.displayColors = false;
             },
             callbacks: {
-                title: (items, data) =>{
+                title: (items, data) => {
                     IndexX = data.datasets[items[0].datasetIndex].data[items[0].index].x;
                     IndexY = data.datasets[items[0].datasetIndex].data[items[0].index].y;
-                    return [yMap[IndexY]+ ' ' + xMap[IndexX],""/*,"Примеры:"*/]},
-                //(item, data) => yMap[data.datasets[item.datasetIndex].data[item.index].y]
-                label: (items, data) => {
-                    var answer = "Пусто";
-                    var MiniTitle = "Используется с:";
+                    let answer = "Пусто";
                     switch (Number(IndexX)) {
                         case 1:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will work", "He won't work", "Will he work?",""/*,MiniTitle*/];
+                                    answer = ["I will work"];
                                     break;
                                 case 2:
-                                    answer = ["I worked", "He didn't work", "Did you work?",""/*,MiniTitle*/];
+                                    answer = ["I worked"];
                                     break;
                                 case 3:
-                                    answer = ["I work","He works", "I don't work", "He doesn't work","Do you work?","Does he work?",""/*,MiniTitle*/];
+                                    answer = ["I work", "He works"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -119,13 +124,13 @@ var config =  {
                         case 2:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will be working", "He won't be working","Will they be working?",""/*,MiniTitle*/];
+                                    answer = ["I will be working"];
                                     break;
                                 case 2:
-                                    answer = ["I was working ", "He were working","He wasn't working ", "We aren't working","Is he working?","Are we working?",""/*,MiniTitle*/];
+                                    answer = ["I was working ", "We were working"];
                                     break;
                                 case 3:
-                                    answer = ["I am working", "He is working ","We are working", "I'm not working","He isn't working","We aren't working","Am I working?","Is he working?","Are we working?",""/*,MiniTitle*/];
+                                    answer = ["I am working", "He is working ", "They are working"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -134,13 +139,13 @@ var config =  {
                         case 3:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will have worked","He won't have worked","Have they worked?",""/*,MiniTitle*/];
+                                    answer = ["I will have worked/done"];
                                     break;
                                 case 2:
-                                    answer = ["I had worked","He hadn't worked", "Had they worked?",""/*,MiniTitle*/];
+                                    answer = ["I had worked/done"];
                                     break;
                                 case 3:
-                                    answer = ["I have worked", "He was worked","I haven't worked","He hasn't worked","Have you worked?","Has he worked?",""/*,MiniTitle*/];
+                                    answer = ["I have worked/done", "He was worked/done"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -149,13 +154,13 @@ var config =  {
                         case 4:
                             switch (Number(IndexY)) {
                                 case 1:
-                                    answer = ["I will have been working","He won't have been working","Will they have been working?",""/*,MiniTitle*/];
+                                    answer = ["I will have been working"];
                                     break;
                                 case 2:
-                                    answer = ["I had been working","He hadn't been working","Had they been working?",""/*,MiniTitle*/];
+                                    answer = ["I had been working"];
                                     break;
                                 case 3:
-                                    answer = ["I have been working","He has been working","I haven't been working","He hasn't been working","Have you been working?","Has he been working?",""/*,MiniTitle*/];
+                                    answer = ["I have been working", "He has been working"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -166,8 +171,145 @@ var config =  {
                     }
                     return answer;
                 },
-                footer: (item, data) => {
-                    var answer = "Пусто";
+                //(item, data) => yMap[data.datasets[item.datasetIndex].data[item.index].y]
+                label: () => {
+                    let answer = "Пусто";
+                    switch (Number(IndexX)) {
+                        case 1:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["He won't work"];
+                                    break;
+                                case 2:
+                                    answer = ["He didn't work"];
+                                    break;
+                                case 3:
+                                    answer = [ "I don't work", "He doesn't work"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 2:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["He won't be working"];
+                                    break;
+                                case 2:
+                                    answer = ["He wasn't working ","We were working"];
+                                    break;
+                                case 3:
+                                    answer = ["I'm not working", "He isn't working", "They aren't working"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 3:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["He won't have worked/done"];
+                                    break;
+                                case 2:
+                                    answer = ["He hadn't worked/done"];
+                                    break;
+                                case 3:
+                                    answer = ["I haven't worked/done", "He hasn't worked/done"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 4:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["He won't have been working"];
+                                    break;
+                                case 2:
+                                    answer = ["He hadn't been working"];
+                                    break;
+                                case 3:
+                                    answer = ["I haven't been working", "He hasn't been working"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        default:
+                            answer = "Всё сломалось...";
+                    }
+                    return answer;
+                },
+                footer: () => {
+                    let answer = "Пусто";
+                    switch (Number(IndexX)) {
+                        case 1:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = [ "Will he work?","(Yes, he will/No, he won't)"];
+                                    break;
+                                case 2:
+                                    answer = ["Did you work?","(Yes, I did/No, I didn't)"];
+                                    break;
+                                case 3:
+                                    answer = [ "Do you work?","(Yes, I do/No, I don't)", "Does he work?","(Yes, he does/No, he doesn't)"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 2:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["Will they be working?","(Yes, they will/No, they won't)"];
+                                    break;
+                                case 2:
+                                    answer = ["Was he working?","(Yes, he was/No, he wasn't)","Were they working?","(Yes, they were/No they weren't)"];
+                                    break;
+                                case 3:
+                                    answer = ["Am I working?","(Yes, Iam/No, I'm not)", "Is he working?","(Yes, he is/No he isn't)", "Are we working?","(Yes they are/No they aren't)"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 3:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["Will they have worked/done?","(Yes, they will/No, they won't)"];
+                                    break;
+                                case 2:
+                                    answer = ["Had they worked/done?","(Yes, they had/No they hadn't)"];
+                                    break;
+                                case 3:
+                                    answer = ["Have they worked/done?","(Yes, they have/No, they haven't)", "Has he worked?","(Yes, he has/No, he hasn't)"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        case 4:
+                            switch (Number(IndexY)) {
+                                case 1:
+                                    answer = ["Will they have been working?","(Yes, they will/No, they won't)"];
+                                    break;
+                                case 2:
+                                    answer = ["Had they been working?","(Yes, they had/No, they hadn')"];
+                                    break;
+                                case 3:
+                                    answer = ["Have they been working?","(Yes, they have/No, they haven't)", "Has he been working?", "(Yes, he has/No, he hasn't)"];
+                                    break;
+                                default:
+                                    answer = "Всё сломалось...";
+                            }
+                            break;
+                        default:
+                            answer = "Всё сломалось...";
+                    }
+                    return answer;
+
+
+                   /* let answer = "Пусто";
                     switch (Number(IndexX)) {
                         case 1:
                             switch (Number(IndexY)) {
@@ -178,7 +320,7 @@ var config =  {
                                     answer = ["did"];
                                     break;
                                 case 3:
-                                    answer = ["do","does"];
+                                    answer = ["do", "does"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -190,10 +332,10 @@ var config =  {
                                     answer = ["will be + ing"];
                                     break;
                                 case 2:
-                                    answer = ["was + ing","were + ing"];
+                                    answer = ["was + ing", "were + ing"];
                                     break;
                                 case 3:
-                                    answer = ["am + ing","is + ing","are + ing"];
+                                    answer = ["am + ing", "is + ing", "are + ing"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -208,7 +350,7 @@ var config =  {
                                     answer = ["had + (work)ed"];
                                     break;
                                 case 3:
-                                    answer = ["have + (work)ed","has + (work)ed"];
+                                    answer = ["have + (work)ed", "has + (work)ed"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -223,7 +365,7 @@ var config =  {
                                     answer = ["had been + ing"];
                                     break;
                                 case 3:
-                                    answer = ["have been + ing","has been + ing"];
+                                    answer = ["have been + ing", "has been + ing"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -232,7 +374,7 @@ var config =  {
                         default:
                             answer = "Всё сломалось...";
                     }
-                    return answer;
+                    return answer;*/
                 },
             }
         },
@@ -294,22 +436,20 @@ var config =  {
         }
     }
 }
-var myChart = new Chart(ChartTimes, config);
-
-
+let myChart = new Chart(ChartTimes, config);
 
 
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.hover.mode = 'single';
 document.getElementById("canvas").onclick = function (evt) {
-    var activePoint = myChart.lastActive[0];
+    let activePoint = myChart.lastActive[0];
     if (activePoint !== undefined) {
-        var index = activePoint._index;
+        let index = activePoint._index;
         //alert("index "+ index);
-        var TimeDiv = document.getElementById("t"+index);
-        if ( $(TimeDiv).css('visibility') == 'hidden'){
-            TimeDiv.style.visibility = 'visible' ;
-        } else{
+        let TimeDiv = document.getElementById("t" + index);
+        if ($(TimeDiv).css('visibility') == 'hidden') {
+            TimeDiv.style.visibility = 'visible';
+        } else {
             TimeDiv.style.visibility = 'hidden';
         }
 

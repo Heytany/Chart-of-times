@@ -21,9 +21,9 @@
 }
 
 body {
-    background: #FFFF99;
+    background: #FFFFcc;
     /*background-image: url('./img/pattern.jpg');*/
-    height: 100vh;
+    margin: 0px;
 }
 
 .array-of-times {
@@ -102,7 +102,7 @@ body {
     margin: 0 15px 0 0;
 }
 
-.time-examples-container{
+.time-examples-container {
     padding: 0 10px;
 }
 
@@ -114,17 +114,13 @@ body {
     margin-right: 0;
 }
 
-.time-title{
-    margin: 2px 0 5px 0;
-}
-
 .time-holder {
     min-width: 21%;
-    min-height: 310px;
-    margin: 15px;
+    min-height: 220px;
+    margin: 5px;
     border-style: dashed;
     border-color: #666666;
-    border-width: 4px;
+    border-width: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,4 +132,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.time-examples li {
+    font-size: 20px;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.time-examples.adv li {
+    font-size: 25px;
+    color: #ff99cc;
+    text-shadow: 2px 0px 0px rgba(0,0,0,0.6);
+}
+
+.time-examples.adv ul {
+    margin: 5px 0 10px 0;
+    padding-left: 0;
+}
+.time-examples ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+.time-examples li {
+    list-style-type: none;
 }
