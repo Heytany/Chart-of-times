@@ -51,6 +51,21 @@ body {
     position: absolute;
 }
 
+#How {
+    bottom: -30px;
+    left: 99%;
+    font-style: normal;
+    font-weight: bold;
+
+}
+
+#When {
+    left: -65px;
+    top: 0%;
+    font-style: normal;
+    font-weight: bold;
+}
+
 #Fu {
     left: -65px;
     top: 15%;
@@ -68,22 +83,22 @@ body {
 
 #Si {
     bottom: -30px;
-    left: 14%;
+    left: 18%;
 }
 
 #Co {
     bottom: -30px;
-    left: 36%;
+    left: 37.5%;
 }
 
 #Pe {
     bottom: -30px;
-    left: 60%;
+    left: 59%;
 }
 
 #PC {
     bottom: -30px;
-    left: 81%;
+    left: 77%;
 }
 
 .arrow-top {
@@ -115,12 +130,9 @@ body {
 }
 
 .time-holder {
-    min-width: 21%;
-    min-height: 220px;
+    min-width: 20%;
+    min-height: 200px;
     margin: 5px;
-    border-style: dashed;
-    border-color: #666666;
-    border-width: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,6 +153,11 @@ body {
 }
 
 .time-examples.adv li {
+    font-size: 20px;
+    color: black;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+}
+.time-examples.adv li b{
     font-size: 25px;
     color: #ff99cc;
     text-shadow: 2px 0px 0px rgba(0,0,0,0.6);
