@@ -84,14 +84,14 @@ let config = {
             mode: 'label',
             titleFontSize: 30,
             titleFontColor: '#66ff66',
-            titleMarginBottom: 0,
+            titleMarginBottom: 11,
             titleFontStyle: 'bold',
             bodyFontSize: 30,
             bodyFontColor: '#ff66ff',
             bodyFontStyle: 'bold',
             footerFontSize: 30,
             footerFontColor: '#3399ff',
-            footerMarginTop: 0,
+            footerMarginTop: 11,
             footerFontStyle: 'bold',
             borderColor: 'rgba(0,0,0,0.9)',
 
@@ -196,7 +196,7 @@ let config = {
                                     answer = ["He won't be working"];
                                     break;
                                 case 2:
-                                    answer = ["He wasn't working ","We were working"];
+                                    answer = ["He wasn't working ","We weren't working"];
                                     break;
                                 case 3:
                                     answer = ["I'm not working", "He isn't working", "They aren't working"];
@@ -267,7 +267,7 @@ let config = {
                                     answer = ["Was he working?","(Yes, he was/No, he wasn't)","Were they working?","(Yes, they were/No they weren't)"];
                                     break;
                                 case 3:
-                                    answer = ["Am I working?","(Yes, Iam/No, I'm not)", "Is he working?","(Yes, he is/No he isn't)", "Are we working?","(Yes they are/No they aren't)"];
+                                    answer = ["Am I working?","(Yes, I am/No, I'm not)", "Is he working?","(Yes, he is/No he isn't)", "Are we working?","(Yes they are/No they aren't)"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
@@ -294,7 +294,7 @@ let config = {
                                     answer = ["Will they have been working?","(Yes, they will/No, they won't)"];
                                     break;
                                 case 2:
-                                    answer = ["Had they been working?","(Yes, they had/No, they hadn')"];
+                                    answer = ["Had they been working?","(Yes, they had/No, they hadn't)"];
                                     break;
                                 case 3:
                                     answer = ["Have they been working?","(Yes, they have/No, they haven't)", "Has he been working?", "(Yes, he has/No, he hasn't)"];
