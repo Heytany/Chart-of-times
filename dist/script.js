@@ -441,7 +441,7 @@ let myChart = new Chart(ChartTimes, config);
 
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.hover.mode = 'single';
-document.getElementById("canvas").onclick = function (evt) {
+/*document.getElementById("canvas").onclick = function (evt) {
     let activePoint = myChart.lastActive[0];
     if (activePoint !== undefined) {
         let index = activePoint._index;
@@ -454,4 +454,4 @@ document.getElementById("canvas").onclick = function (evt) {
         }
 
     }
-};
+};*/
