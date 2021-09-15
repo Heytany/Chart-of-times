@@ -145,7 +145,7 @@ let config = {
                                     answer = ["I had worked/done"];
                                     break;
                                 case 3:
-                                    answer = ["I have worked/done", "He was worked/done"];
+                                    answer = ["I have worked/done", "He has worked/done"];
                                     break;
                                 default:
                                     answer = "Всё сломалось...";
